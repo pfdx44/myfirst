@@ -1,0 +1,121 @@
+<ion-view>
+	<ion-nav-buttons>
+		<div class="bar bar-header bar-assertive" style="background: #DE3D2E;">
+			<button ng-if="comeFromLoginPage" class="button button-icon ion-chevron-left active" ng-click="goToSplash()">
+			</button>
+			<h1 class="title">Profile</h1>
+            <button ng-if="!comeFromLoginPage" class="button button-icon ion-log-out active" ng-click="logOut()">
+			</button>
+		</div>
+	</ion-nav-buttons>
+
+	<ion-content>
+
+		<div style="margin-left: 7%;margin-right: 3%;">
+			<!--
+      <div class="row">
+        <div class="col col-50">
+          <a ng-click="addMedia()">
+            <img ng-src="img/perry.png" id="profile-image">
+          </a>
+        </div>
+        <div class="col col-50" style="margin-top:5% !important">
+          <h2>{{user.name}}</h2>
+        </div>
+      </div>
+	-->
+				<div class="list">
+					<span class="input-label">First Name</span>
+					<label class="item item-input">
+						<input type="text" ng-model="user.first_name" placeholder="First Name" required>
+					</label>
+				</div>
+				<div class="list">
+					<span class="input-label">Last Name</span>
+					<label class="item item-input">
+						<input type="text" ng-model="user.last_name" name="user.last_name" placeholder="Last Name" required>
+					</label>
+				</div>
+				<div class="list">
+					<span class="input-label">E-mail</span>
+					<label class="item item-input">
+						<input type="email" ng-model="user.email" placeholder="E-mail" required>
+						<span ng-show="myForm.email.$error.required" class="help-inline">email is required</span>
+						<span ng-show="!myForm.email.$invalid" class="ion-checkmark"></span>
+					</label>
+				</div>
+				<div class="list">
+					<span class="input-label">Mobile Phone</span>
+					<label class="item item-input">
+						<input type="tel" ng-model="user.cell_phone" ng-minlength="10" placeholder="(519) 123 44 55">
+						<span ng-show="myForm.phone.$error.required" class="help-inline">phone is required</span>
+						<span ng-show="!myForm.phone.$invalid" class="ion-checkmark"></span>
+					</label>
+				</div>
+
+				<div class="list">
+					<span class="input-label">Date of Birth</span>
+					<label class="item item-input">
+						<input type="date" ng-model="user.dob">
+					</label>
+				</div>
+
+				<div class="list">
+					<span class="input-label">Gender</span>
+					<ion-radio ng-model="user.gender" ng-value="'M'" style="display:inline-block;">Male</ion-radio>
+					<ion-radio ng-model="user.gender" ng-value="'F'" style="display:inline-block;">Female</ion-radio>
+				</div>
+
+				<div class="list">
+					<span class="input-label">Street</span>
+					<label class="item item-input">
+						<input type="text" ng-model="user.street" placeholder="Street">
+					</label>
+				</div>
+
+				<div class="row">
+					<div class="list col-30">
+						<span class="input-label">Unit</span>
+						<label class="item item-input">
+							<input type="text" ng-model="user.unit_no" placeholder="Unit">
+						</label>
+					</div>
+
+                    <div class="list col-50 col-offset-10">
+						<span class="input-label">Province</span>
+                        <select ng-model="user.province"  ng-change="UpdateCities(user.province)" class="item item-select" style="width:100%;"
+                            ng-options="i.province as (i.description) for i in provinces">
+                            <option></option>
+                        </select>
+					</div>
+
+				</div>
+
+				<div class="row">
+					<div class="list col-30">
+						<span class="input-label">Postal Code</span>
+						<label class="item item-input">
+							<input type="text" ng-model="user.postcode" placeholder="Postal Code">
+						</label>
+					</div>
+
+
+                    <div class="list col-50 col-offset-10">
+						<span class="input-label">City</span>
+                        <select ng-model="user.city" class="item item-select" style="width:100%;"
+                             ng-options="i.city as (i.description) for i in cities">
+                            <option></option>
+                        </select>
+					</div>
+				</div>
+
+
+				<div class="row" style="bottom:0px;left:0px;right:0px;">
+					<div class="col col-100">
+						<button class="button button-positive red" style="width:100%" ng-click="SaveProfile()">SAVE</button>
+					</div>
+				</div>
+
+		</div>
+	</ion-content>
+</ion-view>

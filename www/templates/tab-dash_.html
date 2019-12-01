@@ -1,0 +1,76 @@
+<ion-view view-title="" id="home">
+	<ion-nav-buttons>
+		<div class="bar bar-header bar-assertive bg-red">
+			<h1 class="title">Home</h1>
+		</div>
+	</ion-nav-buttons>
+	<ion-content scroll="false">
+  <div class="blue-background-layer"></div>
+  <div class="pagecontent">
+   <div class="pagecontent-center">
+
+		<!--
+	   <div class="col col-50 item-image" style="position:absolute; top:50%; left: 0; right: 0; margin:0 auto; top:50%; transform:translateY(-50%);">
+  			<a class="button button-icon icon active" ng-click="readBarcode()">
+   				<img src="img/main_page.png">
+  			</a>
+ 		</div>
+		-->
+        	<!--
+			<div class="row">
+				<div class="col col-100 item-image img-container">
+					<a class="button button-icon icon active" ng-click="readBarcode();">
+						<img src="img/HomepageIcon_NewScan.svg"></a>
+					<div class='img-footer'>
+						<p class="font-regular">New Scan</p>
+					</div>
+				</div>
+			</div>
+            	-->
+
+            <div class="col col-100" style="position:absolute; top:40%; left: 0; right: 0; margin:0 auto; transform:translateY(50%);border: 0px solid;">
+    			<div class="row" style="border:0px solid;">
+    				<div class="col col-50 item-image-right img-container" style="padding: 0px 0px 0px 0px;">
+    					<a class="button button-icon icon active"  ng-click="readBarcode()">
+    						<img src="img/HomepageIcon_NewScan.svg"></a>
+    					<div class='img-footer' style="text-align: center;">
+    						<p>New Scan</p>
+    					</div>
+    				</div>
+                    <div class="col col-50  item-image-left img-container" style="border:0px solid;padding: 0px 0px 0px 0px;">
+    					<a class="button button-icon icon active" ng-click="stateStores()">
+    						<img src="img/HomepageIcon_Map.svg"></a>
+    					<div class='img-footer' style="text-align: center;" >
+    						<p>Store Locator</p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="row">
+    				<div class="col col-50  item-image-right img-container" style="padding: 0px 0px 0px 0px;">
+    					<a class="button button-icon icon active" ng-click="stateMyBids()">
+    						<img src="img/HomepageIcon_OffersBids.svg"></a>
+    					<div class='img-footer' style="text-align: center;">
+    						<p>My Bids</p>
+    					</div>
+    				</div>
+    				<div class="col col-50  item-image-left img-container" style="padding: 0px 0px 0px 0px;">
+    					<a class="button button-icon icon active" ng-click="stateMyProfile()">
+    						<img src="img/HomepageIcon_Map.svg"></a>
+    					<div class='img-footer' style="text-align: center;">
+    						<p>My Profile</p>
+    					</div>
+    				</div>
+    			</div>
+
+                <div class="row text-center">
+    				<div class="col col-100">
+    					<p class="font-regular white mrgtop-2" ng-if="storeId != 0">To scan a product touch New Scan</p>
+    					<p class="font-regular white mrgtop-1" ng-if="storeId == 0">Please select a store before scanning a product</p>
+    				</div>
+    			</div>
+    		</div>
+
+		</div>
+</div>
+	</ion-content>
+</ion-view>

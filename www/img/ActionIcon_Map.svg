@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="296.224 973 63.483 53">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #de3d2e;
+        stroke-width: 1.5px;
+      }
+    </style>
+  </defs>
+  <g id="group-109" transform="translate(21 434)">
+    <g id="group-51" transform="translate(53.36 13)">
+      <circle id="ellipse" class="cls-1" cx="4.94" cy="4.94" r="4.94" transform="translate(251.586 542.031)"/>
+      <path id="path" class="cls-1" d="M340.666,30.532c-.006-.012-.1-.146-.329-.445-.426-.573-1.4-1.961-3.588-5.245-3.8-5.7-5.97-8.656-5.97-13.6a9.88,9.88,0,1,1,19.76,0c0,4.94-2.174,7.9-5.969,13.6-2.187,3.283-3.161,4.678-3.588,5.245C340.776,30.385,340.673,30.519,340.666,30.532Z" transform="translate(-84.14 535.731)"/>
+    </g>
+    <rect id="rectangle-23" class="cls-2" width="63.483" height="53" transform="translate(275.224 539)"/>
+  </g>
+</svg>

@@ -1,0 +1,47 @@
+<ion-view view-title="">
+	<ion-nav-buttons>
+		<div class="bar bar-header bar-assertive" style="background: #DE3D2E;">
+			<h1 class="title">Offers / Bids</h1>
+			<button class="button button-icon icon ion-refresh" ng-click="refreshOffersBids()"></button>
+		</div>
+		
+	</ion-nav-buttons>
+	<ion-content>
+		<ion-list>
+			<ion-item class="item-remove-animate" ng-repeat="item in closedlist" type="item-text-wrap" ng-click="" style="padding: 0%;">
+
+				<div  class="row">
+					<div class="col col-30" style="border:0px;">
+						<img ng-src="{{item.pict_urls[0].pict_url}}" class="product-image">
+					</div>
+
+					<div class="col col-60 col-offset-10" style="border:0px;">
+						<p style="font-weight: bold;">{{item.retailer_name}}</p>
+						<p>{{item.desc}}</p>
+						<p>{{item.product_sku}}</p>
+						<p>Reg. {{item.list_price}}$</p>
+						<p style="color:#30A1D9">My Offer {{item.asked_price}}$</p>
+						<p style="color:#DE3D2E;font-weight: bold;" ng-if="item.status == 'OFFERMADE'" >OFFER ACCEPTED</p>
+						<p style="color:#444444;font-weight: bold;" ng-if="item.status == 'EXPIRED'" >OFFER EXPIRED</p>
+						<p style="color:#2CB1DC;font-weight: bold;" ng-if="item.status == 'REJECTED'" >OFFER REJECTED</p>
+						<p style="color:#DE3D2E;font-weight: bold;" ng-if="item.status == 'APPROVED'" >OFFER APPROVED</p>
+					</div>
+				</div>
+				
+				<div  class="row"  ng-if="item.status == 'OFFERMADE'">
+					<div class="col col-50" >
+						<button class="button button-light red" ng-click="">DECLINE OFFER</button>
+					</div>
+					
+					<div class="col col-50">
+						<button class="button button-positive red" ng-click="">PURCHASE ITEM</button>
+					</div>
+
+				</div>
+				
+			</ion-item>
+
+
+		</ion-list>
+	</ion-content>
+</ion-view>

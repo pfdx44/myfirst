@@ -1,0 +1,98 @@
+<ion-view view-title="">
+	<ion-nav-buttons>
+		<div class="bar bar-header">
+
+			<div class="title">
+				<button id="toggle-on" class="toggle" ng-class="waitingSelected" ng-click="changeView('waiting')" name="toggle">Waiting</button>
+				<button id="toggle-off" class="toggle" ng-class="ordersSelected" ng-click="changeView('orders')" name="toggle">Offers</button>
+				<button id="toggle-off" class="toggle" ng-class="closedSelected" ng-click="changeView('closed')" name="toggle">Closed</button>
+
+			</div>
+		</div>
+	</ion-nav-buttons>
+
+    <!-- <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-refresh smaller" ng-click="refreshBids()">
+
+        </button>
+    </ion-nav-buttons> -->
+	<ion-content>
+		<!--
+		<div class="" style="border:0px;">
+			<input type="search" placeholder="Search" ng-model="search" ng-focus="searchFocused = true" ng-blur="searchFocused = false" ng-change="scrollTop()" class="full-width">
+		</div>
+-->
+        <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+		<ion-list>
+			<ion-item ng-show="listType == 'waiting'" class="item-remove-animate item-avatar item-icon-right row"
+                    ng-repeat="item in waitingList" type="item-text-wrap" ng-click="goToDeal(item)" style="padding: %1;">
+
+				<div class="col-30" style="border:0px;">
+					<img ng-src="{{item.pict_urls[0].pict_url}}" class="product-image">
+				</div>
+
+				<div class="col-10" style="border:0px;">
+				</div>
+
+				<div class="col-60" style="border:0px;">
+                    <p style="font-weight:bold">{{item.store_name}}</p>
+					<p>{{item.retailer_name}}</p>
+					<p>{{item.desc}}</p>
+					<p>{{item.product_sku}}</p>
+					<p>Reg. {{item.list_price}}$</p>
+					<p style="color:#30A1D9">My Offer {{item.asked_price}}$</p>
+					<p style="color:#FF8000;font-weight: bold;">OFFER NOT COMPLETED</p>
+				</div>
+			</ion-item>
+
+
+			<ion-item ng-show="listType == 'orders'" class="item-remove-animate item-avatar item-icon-right row"
+                ng-repeat="item in orderList" type="item-text-wrap" ng-click="goToDeal(item)" style="padding: %1;">
+
+				<div class="col-30" style="border:0px;">
+					<img ng-src="{{item.pict_urls[0].pict_url}}" class="product-image">
+				</div>
+
+				<div class="col-10" style="border:0px;">
+				</div>
+
+				<div class="col-60" style="border:0px;">
+                    <p style="font-weight:bold">{{item.store_name}}</p>
+					<p>{{item.retailer_name}}</p>
+					<p>{{item.desc}}</p>
+					<p>{{item.product_sku}}</p>
+					<p>Reg. {{item.list_price}}$</p>
+					<p style="color:#30A1D9">My Offer {{item.asked_price}}$</p>
+					<p style="color:#01DF3A;font-weight: bold;">OFFER MADE</p>
+				</div>
+			</ion-item>
+
+
+			<ion-item ng-show="listType == 'closed'" class="item-remove-animate item-avatar item-icon-right row"
+                ng-repeat="item in closedList" type="item-text-wrap" ng-click="goToDeal(item)" style="padding: %1;">
+
+				<div class="col-30" style="border:0px;">
+					<img ng-src="{{item.pict_urls[0].pict_url}}" class="product-image">
+				</div>
+
+				<div class="col-10" style="border:0px;">
+				</div>
+
+				<div class="col-60" style="border:0px;">
+                    <p style="font-weight:bold">{{item.store_name}}</p>
+					<p>{{item.retailer_name}}</p>
+					<p>{{item.desc}}</p>
+					<p>{{item.product_sku}}</p>
+					<p>Reg. {{item.list_price}}$</p>
+					<p style="color:#30A1D9">My Offer {{item.asked_price}}$</p>
+					<p style="color:#000000;font-weight: bold;" ng-if="item.status == 'EXPIRED'">OFFER EXPIRED</p>
+					<p style="color:#000000;font-weight: bold;" ng-if="item.status == 'CANCELED'">OFFER CANCELED</p>
+					<p style="color:#000000;font-weight: bold;" ng-if="item.status == 'REJECTED'">OFFER REJECTED</p>
+					<p style="color:#FF0000;font-weight: bold;" ng-if="item.status == 'APPROVED'">OFFER APPROVED</p>
+				</div>
+			</ion-item>
+
+
+		</ion-list>
+	</ion-content>
+</ion-view>

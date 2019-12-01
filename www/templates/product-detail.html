@@ -1,0 +1,145 @@
+<ion-view view-title="">
+    <ion-nav-buttons>
+            <div class="bar bar-header bar-assertive" style="background: #DE3D2E;">
+                <button class="button button-icon ion-chevron-left active" ng-click="goToList()">
+                </button>
+                <h1 class="title">Product Detail</h1>
+            </div>
+        </ion-nav-buttons>
+        
+	<ion-content class="padding mt-5">
+
+		<div class="row">
+			<h5><strong>{{product.desc}}</strong></h5>
+		</div>
+
+		<div class="row mt-5" >
+			<div class="col col-25 col-center">
+				<img ng-src="{{product.pict_urls[0].pict_url}}" style="width: 80px; height: 80px; margin-top: 0%">
+			</div>
+
+
+			<div class="col col-75">
+				<div class="row">
+					<div class="col col-100" >
+							<div class="row">
+								<div class="fixed-color">Retail Price</div>
+							</div>
+							<div class="row">
+								<div class="fixed-color price">{{product.price}} {{product.currency}}</div>
+							</div>
+							<div class="row no-space-vertical" >
+								<span class="col col-50 smaller fbold no-space-vertical no-space-horizontal" > Product Code </span>
+								<span class="col col-40 smaller no-space-vertical no-space-horizontal">{{product.productsku}}</span>
+							</div>
+                            <div class="row no-space-vertical" >
+								<span class="col col-50 smaller fbold no-space-vertical no-space-horizontal" > Color </span>
+								<span class="col col-40 smaller no-space-vertical no-space-horizontal">{{product.colorInfo}}</span>
+							</div>
+                            <div class="row no-space-vertical" >
+								<span class="col col-50 smaller fbold no-space-vertical no-space-horizontal" > Size </span>
+								<span class="col col-40 smaller no-space-vertical no-space-horizontal">{{product.sizeInfo}}</span>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+		</div>
+		<div ng-if="showDescription">
+			<p ng-bind-html="feature_text"> </p>
+		</div>
+
+
+		<div ng-if="showMakeDeal">
+			<div class="row" style="bottom:0px;left:0px;right:0px;">
+				<div class="col col-100">
+					<button class="button button-positive red" style="width:100%" ng-click="makeDeal()">Make a Bid</button>
+				</div>
+			</div>
+		</div>
+
+		<div ng-if="showForm">
+
+            <div ng-if="product.color.length > 0" class="row">
+                <div class="col col-100">
+                    <span class="input-label" style="color: #2CB1DC;">Color</span>
+                    <select ng-if="product.color.length > 1" ng-model="product.productColor" class="item item-select" style="width:100%;">
+                        <option value=""></option>
+                        <option ng-repeat="item in product.color" value="{{item.color}}">{{item.color}}</option>
+                    </select>
+                    <label ng-if="product.color.length == 1" class="item item-input">
+						<input type="text" ng-model="product.color[0].color" disabled>
+					</label>
+                </div>
+            </div>
+
+            <div ng-if="product.size.length > 0"  class="row">
+                <div class="col col-100">
+                    <span class="input-label" style="color: #2CB1DC;">Size</span>
+                    <select ng-if="product.size.length > 1"  ng-model="product.productSize" class="item item-select" style="width:100%;">
+                        <option value=""></option>
+                        <option ng-repeat="item in product.size" value="{{item.size}}">{{item.size}}</option>
+                    </select>
+                    <label ng-if="product.size.length == 1" class="item item-input">
+						<input type="text" ng-model="product.size[0].size" disabled>
+					</label>
+                </div>
+            </div>
+
+			<div class="row">
+				<div class="col col-100">
+					<span class="input-label" style="color: #2CB1DC;">Bidding Price</span>
+					<label class="item item-input">
+						<input type="number" ng-model="product.preferredPrice">
+					</label>
+				</div>
+			</div>
+
+			<!--
+			<div class="row">
+				<div class="col col-100 text-center fixed-color"> OR </div>
+			</div>
+			<div class="row">
+				<div class="col col-100">
+					<span class="input-label" style="color: #2CB1DC;">Preffered Discount</span>
+					<label class="item item-input" style="border: 2px solid #2CB1DC;">
+						<input type="number" ng-model="product.preferredDiscount">
+					</label>
+
+				</div>
+			</div>
+
+
+<select class="smaller" ng-model="product.color" ng-options="item.color as item.color for item in product.color">
+								</select>
+
+
+<select class="smaller" ng-model="product.productSize" ng-options="item.size as item.size for item in product.size"></select>
+-->
+			<div class="row">
+				<div class="col col-100">
+							<span class="input-label" style="color: #2CB1DC;">Expiry Date for Bid``</span>
+					<label class="item item-input">
+						<input type="date" ng-model="product.expiryTime">
+					</label>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col-100">
+					<button class="button button-positive red" style="width:100%" ng-click="saveRequest()">Submit The Bid</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" ng-if="product.status == 'OFFERMADE'">
+				<div class="col col-50">
+					<button class="button button-positive red" style="width:100%" ng-click="approveBid()">Approve</button>
+				</div>
+				<div class="col col-50">
+					<button class="button button-positive red" style="width:100%" ng-click="rejectBid()">Reject</button>
+				</div>
+			</div>
+	</ion-content>
+</ion-view>

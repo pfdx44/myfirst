@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="105.776 973 63.483 53">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #de3d2e;
+        stroke-width: 1.5px;
+      }
+    </style>
+  </defs>
+  <g id="group-106" transform="translate(21 434)">
+    <g id="group-54" transform="translate(16.791 14)">
+      <path id="path" class="cls-1" d="M100.883,3.49H96.01V8.363" transform="translate(-8.801 534.899)"/>
+      <path id="path-2" data-name="path" class="cls-1" d="M96.01,37.24v4.873h4.873" transform="translate(-8.801 521.707)"/>
+      <path id="path-3" data-name="path" class="cls-1" d="M139.01,42.113h4.873V37.24" transform="translate(-25.608 521.707)"/>
+      <path id="path-4" data-name="path" class="cls-1" d="M143.883,8.363V3.49H139.01" transform="translate(-25.608 534.899)"/>
+      <line id="line" class="cls-1" y2="8.223" transform="translate(112.183 553.16)"/>
+      <line id="line-2" data-name="line" class="cls-1" x2="8.303" transform="translate(108.072 557.272)"/>
+      <line id="line-3" data-name="line" class="cls-1" x2="26.954" transform="translate(89.493 550.572)"/>
+    </g>
+    <rect id="rectangle-23" class="cls-2" width="63.483" height="53" transform="translate(84.776 539)"/>
+  </g>
+</svg>

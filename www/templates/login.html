@@ -1,0 +1,85 @@
+<ion-view>
+	<ion-nav-buttons>
+		<div class="bar bar-header bar-assertive" style="background: #DE3D2E;">
+			<button class="button button-icon ion-chevron-left active" ng-click="goToSplash()">
+			</button>
+			<h1 class="title">Sign In</h1>
+		</div>
+	</ion-nav-buttons>
+
+	<div class="background-bluegradient" style="width:100%;height:100vh;">
+		<!-- To center the stripe set, select its relative width and set the left offset to 50%-(width%/2)  -->
+		<div class="background-stripe-large" style="width:80%;left:10%;">
+			<div class="background-stripe-small">
+
+			</div>
+		</div>
+	</div>
+
+	<div class="row" style="width:100%;height:100%;">
+		<div class="col col-100" style="position:absolute; top:10%; left: 0; right: 0; margin:0 auto;">
+
+			<!--
+
+			<div class="row" style="width:100%;height:50%;">
+				<div class="col col-center col-100" style="width:100%;">
+					<button class="button button-light blue" style="width:100%" ng-click="">New? Sign up here</button>
+				</div>
+			</div>
+			-->
+
+
+			<!--
+			<div class="row" style="width:100%;height:50%;">
+				<div class="col col-center col-100">
+					<a class="button button-icon icon active" align="right" ng-click="" style="width:100%">
+						<img src="img/btn_google+_signin_dark_normal_web.svg" style="width:100%"></a>
+				</div>
+			</div>
+			-->
+
+
+			<!--
+			<div class="row" style="width:100%;height:50%;">
+				<div class="col col-center col-100">
+					<h3 align="center" style="color:#30A1D9"> OR </h3>
+				</div>
+			</div>
+			-->
+
+
+				<div class="row" style="width:100%;height:50%;">
+					<div class="col col-center" style="">
+						<img src="img/Shopiit_S-Bag_Solo.svg" align="center">
+					</div>
+				</div>
+
+
+			<div class="row" style="position:fixed; bottom:0px;left:0px;right:0px;">
+                <div class="col">
+                <div class="row">
+					<div class="col col-center col-100">
+						<div class="list list-inset" align="center">
+							<label class="item item-input" style="border: 2px solid #2CB1DC;">
+								<input type="email" placeholder="Email" ng-model="email">
+							</label>
+						</div>
+						<div class="list list-inset" align="center">
+                            <label class="item item-input" style="border: 2px solid #2CB1DC;">
+							<input type="tel" placeholder="Phone Number" ng-minlength="10" ng-model="cellphone">
+                            	</label>
+						</div>
+					</div>
+				</div>
+
+                <div class="row">
+				<div class="col col-100">
+					<button class="button button-positive red" style="width:100%" ng-click="logIn()">LOG IN</button>
+				</div>
+            </div>
+        </div>
+		</div>
+
+		</div>
+	</div>
+</ion-view>

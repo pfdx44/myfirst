@@ -1,0 +1,111 @@
+<ion-view view-title="">
+	<ion-nav-buttons>
+		<div class="bar bar-header">
+			<div class="title">
+				<button id="toggle-on" class="toggle" ng-class="chosenSelected" ng-click="changeView('chosen')" name="toggle">Chosen</button>
+				<button id="toggle-off" class="toggle" ng-class="listSelected" ng-click="changeView('list')" name="toggle">List</button>
+				<button id="toggle-off" class="toggle" ng-class="mapSelected" ng-click="changeView('map')" name="toggle">Map</button>
+			</div>
+		</div>
+	</ion-nav-buttons>
+	<ion-content>
+
+		<div ng-if="clientSide == 'chosen'">
+
+			<div class="row mt-5" style="">
+
+				<div class="col col-70" style="">
+
+					<div class="row">
+						<div class="col col-100 col-bottom col-offset-10" style="">
+							<p style="font-weight:bold;font-size: 150%;">{{chosenStore.storename}}</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col col-25" style="border:0px;">
+					<div class="row">
+						<div class="col">
+							<img ng-src="{{chosenStore.brand_logo_url}}" style="width: 60px; height: 60px">
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col col-30">
+					<p style="font-weight:bold;">Phone</p>
+				</div>
+				<div class="col col-50">
+					<p style="font-weight:normal;">{{chosenStore.phone}}</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-30">
+					<p style="font-weight:bold;">Address</p>
+				</div>
+				<div class="col col-50">
+					<p style="font-weight:normal;">{{chosenStore.street}}</p>
+					<p style="font-weight:normal;">{{chosenStore.unit_no}}</p>
+					<p style="font-weight:normal;">{{chosenStore.city}}</p>
+				</div>
+			</div>
+
+            <div class="row">
+                <div class="col col-100 col-bottom col-offset-10" style="">
+                    <p style="font-weight:bold;font-size: 100%;color:#2CB1DC;">This is your selected store.</p>
+                    <p style="font-weight:bold;font-size: 100%;color:#2CB1DC;">Please goto home page and continue by touching scan icon for product barcode scanning.</p>
+                </div>
+            </div>
+
+
+		</div>
+
+		<div ng-if="clientSide == 'map'" style="width:100%;height:100vh;">
+			<ui-gmap-google-map center='map.center' zoom='map.zoom' style="height: 100%;">
+				<ui-gmap-markers models="markers" coords="'location'" click="showInfo" icon="'icon'">
+				</ui-gmap-markers>
+				<ui-gmap-window coords="infoBusiness.location" show="infoVisible" closeClick="hideInfo()" options="windowOptions">
+					<p>
+						<span class="label" style="color: #DE3D2E;font-weight:bold;">{{infoBusiness.title}}</span>
+						<br>
+						<span class="label" style="color: #000000;font-weight:bold;">Street:</span>
+						<span class="label" style="color: #000000;font-weight:normal;">{{infoBusiness.street}}</span>
+						<br>
+						<span class="label" style="color: #000000;font-weight:bold;">Phone:</span>
+						<span class="label" style="color: #000000;font-weight:normal;">{{infoBusiness.phone}}</span>
+						<br>
+						<span class="label" style="color: #000000;font-weight:bold;">Dist:</span>
+						<span class="label" style="color: #000000;font-weight:normal;">{{infoBusiness.distance}}km</span>
+						<br>
+						<span class="icon ion-checkmark" ng-click="$parent.gotoStoreDetail({{infoBusiness.id}})">
+							<span class="label" style="color: #2CB1DC;font-weight:bold;"> Select</span>
+						</span>
+					</p>
+				</ui-gmap-window>
+			</ui-gmap-google-map>
+		</div>
+
+		<ion-list ng-if="clientSide == 'list'">
+			<ion-item class="item-remove-animate item-avatar item-icon-right row smaller" ng-repeat="store in stores" ng-click="select($index);gotoStoreDetail(store.store_id);" ng-class="{sel: $index == selected}" type="item-text-wrap" style="padding: %1;" >
+				<div class="col col-20">
+					<img ng-src="{{store.brand_logo_url}}" style="width: 48px; height: 48px;">
+				</div>
+				<div class="col col-50">
+                    <div style="font-weight:bold;">{{store.storename}}&nbsp;</div>
+					<div>{{store.street}}&nbsp;</div>
+					<div>{{store.unit_no}}&nbsp;</div>
+					<div>{{store.city}}, {{store.state}} {{store.post_code}}</div>
+					<div>Tel: {{store.phone}}</div>
+				</div>
+				<div class="col col-30">
+					<div class="row">
+						<div class="col col-40"></div>
+						<p style="float: right;" class="col-60">{{store.distance}} Km</p>
+					</div>
+				</div>
+			</ion-item>
+		</ion-list>
+
+	</ion-content>
+</ion-view>

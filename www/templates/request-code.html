@@ -1,0 +1,28 @@
+<ion-view view-title="">
+
+        <ion-nav-buttons>
+            <div class="bar bar-header bar-assertive" style="background: #DE3D2E;">
+                <button class="button button-icon ion-chevron-left active" ng-click="goToList()">
+                </button>
+                <h1 class="title">Request Cashier Code</h1>
+            </div>
+        </ion-nav-buttons>
+
+	       <ion-content class="padding mt-5">
+
+                <div ng-show="codetype == 'cashier'" class="row text-center" style="width:100%;">
+                    <div  class="col col-100" style="position:absolute; top:0%; left: 0%; right: 0; margin:0 auto; transform:translateY(50%);">
+                        <qr text="code" ></qr>
+                    </div>
+                </div>
+
+                <div  ng-show="codetype == 'online'"  class="row text-center" style="width:100%;height:100%;">
+                    <div  class="col col-100" style="position:absolute; top:0%; left: 0%; right: 0; margin:0 auto; transform:translateY(50%);">
+                        <div class="text-center" style="color: #2CB1DC;">Your discount coupon is </div>
+                        <br>
+                        <div class="text-center">{{code}}</div>
+                    </div>
+                </div>
+
+	       </ion-content>
+</ion-view>

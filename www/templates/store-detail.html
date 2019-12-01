@@ -1,0 +1,59 @@
+<ion-view view-title="">
+    <ion-nav-buttons>
+        <div class="bar bar-header bar-assertive" style="background: #DE3D2E;">
+            <button class="button button-icon ion-chevron-left active" ng-click="goToStoreList()">
+            </button>
+            <h1 class="title">Store Detail</h1>
+        </div>
+    </ion-nav-buttons>
+
+	<ion-content class="padding mt-5">
+
+		<div class="row mt-5" style="">
+
+			<div class="col col-70" style="">
+
+				<div class="row">
+					<div class="col col-100 col-bottom col-offset-10" style="">
+						<p style="font-weight:bold;font-size: 150%;">{{chosenStore.storename}}</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col col-25" style="border:0px;">
+				<div class="row">
+					<div class="col">
+						<img ng-src="{{chosenStore.brand_logo_url}}" style="width: 60px; height: 60px">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col col-30">
+				<p style="font-weight:bold;">Phone</p>
+			</div>
+			<div class="col col-50">
+				<p style="font-weight:normal;">{{chosenStore.phone}}</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col col-30">
+				<p style="font-weight:bold;">Address</p>
+			</div>
+			<div class="col col-50">
+				<p style="font-weight:normal;">{{chosenStore.street}}</p>
+				<p style="font-weight:normal;">{{chosenStore.unit_no}}</p>
+				<p style="font-weight:normal;">{{chosenStore.city}}</p>
+			</div>
+		</div>
+
+		<div class="row" style="bottom:0px;left:0px;right:0px;">
+			<div class="col col-100">
+				<button class="button button-positive red" style="width:100%" ng-click="choseStore()">Select Store For Scanning</button>
+			</div>
+		</div>
+
+
+	</ion-content>
+</ion-view>

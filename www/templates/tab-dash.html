@@ -1,0 +1,70 @@
+<ion-view view-title="">
+	<ion-nav-buttons>
+		<div class="bar bar-header bar-assertive" style="background: #DE3D2E;">
+			<h1 class="title">Home</h1>
+		</div>
+	</ion-nav-buttons>
+	<ion-content scroll="false">
+
+		<!--
+	   <div class="col col-50 item-image" style="position:absolute; top:50%; left: 0; right: 0; margin:0 auto; top:50%; transform:translateY(-50%);">
+  			<a class="button button-icon icon active" ng-click="readBarcode()">
+   				<img src="img/main_page.png">
+  			</a>
+ 		</div>
+		-->
+
+		<div class="background-bluegradient" style="width:100%;height:100vh;">
+			<!-- To center the stripe set, select its relative width and set the left offset to 50%-(width%/2)  -->
+			<div class="background-stripe-large" style="width:80%;left:10%;">
+				<div class="background-stripe-small">
+
+				</div>
+			</div>
+		</div>
+
+			<div class="col col-100" style="position:absolute; top:50%; left: 0; right: 0; margin:0 auto; transform:translateY(-50%);border: 0px solid;">
+			<div class="row" style="border: 0px solid;">
+				<div class="col col-50 item-image img-container" style="border: 0px solid;width:100%;height:100%;">
+					<a class="button button-icon icon active" align="right" ng-click="readBarcode()">
+						<img src="img/HomepageIcon_NewScan.svg"></a>
+					<div class='img-footer' style="border: 0px solid;">
+						<p>New Scan</p>
+					</div>
+
+				</div>
+				<div class="col col-50  item-image img-container" style="border: 0px solid;">
+					<a class="button button-icon icon active" ng-click="stateStores()">
+						<img src="img/HomepageIcon_Map.svg"></a>
+					<div class='img-footer' style="border: 0px solid;">
+						<p>Store Locator</p>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="border: 0px solid;">
+				<div class="col col-50  item-image img-container" style="border: 0px solid;">
+					<a class="button button-icon icon active" ng-click="stateMyBids()">
+						<img src="img/HomepageIcon_OffersBids.svg"></a>
+					<div class='img-footer' style="border: 0px solid;">
+						<p>My Bids</p>
+					</div>
+				</div>
+				<div class="col col-50  item-image img-container" style="border: 0px solid;">
+					<a class="button button-icon icon active" ng-click="stateMyProfile()">
+						<img src="img/HomepageIcon_Map.svg"></a>
+					<div class='img-footer' style="border: 0px solid;">
+						<p>My Profile</p>
+					</div>
+				</div>
+			</div>
+
+			 <div class="row text-center" style="">
+				<div class="col col-100" style="border: 0px solid;width:100%;height:100%;">
+					<p style="color:#fff;font-weight: bold;" ng-if="storeId != '0'">Please touch button to scan a product </p>
+					<p style="color:#fff;font-weight: bold;" ng-if="storeId == '0'">Please select a store before scan a product </p>
+				</div>
+			</div>
+		</div>
+
+	</ion-content>
+</ion-view>

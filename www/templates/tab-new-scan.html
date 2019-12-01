@@ -1,0 +1,31 @@
+<ion-view view-title="">
+	<ion-nav-buttons>
+		<div class="bar bar-header bar-assertive" style="background: #DE3D2E;">
+			<h1 class="title">New Scan</h1>
+		</div>
+	</ion-nav-buttons>
+	
+	<ion-content scroll="false">
+		<div class="background-bluegradient" style="width:100%;height:100vh;">
+			<!-- To center the stripe set, select its relative width and set the left offset to 50%-(width%/2)  -->
+			<div class="background-stripe-large" style="width:80%;left:10%;">
+				<div class="background-stripe-small">
+
+				</div>
+			</div>
+		</div>
+
+		<div class="row" style="width:100%;height:100vh;">
+			<div class="col col-100" style="position:absolute; top:40%; left: 0; right: 0; margin:0 auto;">
+				<div class="row" style="width:100%;height:50%;">
+					<div class="col col-center" style="">
+						<button class="button button-positive red" align="center" style="width:100%;height:8em;" ng-click="readBarcode()">
+							SCAN NOW</button>
+					</div>
+				</div>
+				
+
+			</div>
+		</div>
+	</ion-content>
+</ion-view>
